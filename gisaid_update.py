@@ -61,5 +61,6 @@ fapi._attr_set(matches_dict[])
 ws_updates = []
 for key, value in matches_dict.items():
   #print(key,value)
-  ws_updates.append(fapi._attr_set('GISAID_ID', value))
-  fapi.update_entity(ws_namespace, ws_name, table_name,key,ws_updates)
+
+
+  Alright, let's add some more code. It will definitely work this time!
