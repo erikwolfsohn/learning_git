@@ -63,29 +63,3 @@ for key, value in matches_dict.items():
   #print(key,value)
   ws_updates.append(fapi._attr_set('GISAID_ID', value))
   fapi.update_entity(ws_namespace, ws_name, table_name,key,ws_updates)
-
-  for result in data['results']:
-    submission_id = result['attributes']['submission_id']
-    name = result['name']
-    
-    if submission_id in matches_dict:
-        temp_dict[name] = matches_dict[submission_id]
-    else:
-        # If there's no match, keep the original key-value pair
-        temp_dict[submission_id] = matches_dict.get(submission_id, None)
-
-matches_dict = temp_dict
-
-print(matches_dict)
-
-for i in range(len(matches_dict)):
-    #print(matches_dict[i][0], matches_dict[i][1])
-    ws_updates.append(fapi._attr_set(ws_attr[i][0], ws_attr[i][1]))
-
-fapi._attr_set(matches_dict[])
-
-ws_updates = []
-for key, value in matches_dict.items():
-  #print(key,value)
-  ws_updates.append(fapi._attr_set('GISAID_ID', value))
-  fapi.update_entity(ws_namespace, ws_name, table_name,key,ws_updates)
